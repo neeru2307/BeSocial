@@ -12,17 +12,20 @@ import {
 import Navbar from './Components/Navbar/Navbar';
 import Leftbar from './Components/Leftbar/Leftbar'
 import Rightbar from './Components/Rightbar/Rightbar'
-
-
+import "./styles.scss"
+import { useContext } from 'react';
+import { DarkModeContext } from './Context/darkModeContext';
+import { AuthContext } from './Context/authContext';
 
 function App() {
 
-  const currentUser = true; 
+  const {currentUser} = useContext(AuthContext); 
   
+  const {darkMode} = useContext(DarkModeContext)
 
   const Layout = () => {
     return(
-      <div>
+      <div className={`theme-${darkMode? "dark": "light"}`}>
         <Navbar/>
         <div style={{display: "flex"}}>
           <Leftbar/>
