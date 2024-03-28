@@ -9,6 +9,7 @@
     @include mobile{
         height: 50px;
         justify-content: space-between;
+        margin-bottom: 10px;
     }
 
     @include tablet{
